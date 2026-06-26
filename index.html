@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
     
     <!-- Preload da primeira imagem (raiz do GitHub) -->
-    <link rel="preload" as="image" href="fatia-hero.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="fatia-hero-1.jpg" fetchpriority="high">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -121,19 +121,40 @@
             </div>
             
             <!-- Headline Matadora -->
-            <h1 class="font-heading text-4xl sm:text-5xl font-black text-gray-900 leading-tight mb-6 tracking-tight">
+            <h1 class="font-heading text-4xl sm:text-5xl font-black text-gray-900 leading-tight mb-8 tracking-tight">
                 Como faturar de <br>
                 <span class="text-green-600">R$ 2.000 a R$ 5.000/mês</span><br>
                 com <span class="text-brand-600">Festival de Fatias Presencial ou Delivery</span>
             </h1>
             
-            <!-- IMAGEM HERO (Raiz do GitHub) -->
-            <div class="relative mx-auto w-full max-w-2xl lg:max-w-3xl mb-8">
-                <img src="fatia-hero.webp" 
-                     onerror="this.onerror=null; this.src='https://placehold.co/800x450/fce7f3/db2777?text=Festival+de+Fatias';" 
-                     alt="Festival de Fatias de Bolo" 
-                     class="relative z-10 w-full h-auto animate-float rounded-2xl shadow-2xl border-[3px] border-white" 
-                     fetchpriority="high">
+            <!-- GRID DE FOTOS (HERO) - CLEAN E SEPARADO -->
+            <div class="grid grid-cols-2 gap-3 sm:gap-4 max-w-lg mx-auto mb-12 mt-6 px-2">
+                <!-- Imagem Principal (Esquerda - Alta) -->
+                <div class="overflow-hidden rounded-2xl shadow-lg border-[3px] border-white row-span-2">
+                    <img src="fatia-hero-1.jpg" 
+                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=600&fit=crop';" 
+                         alt="Fatia de Bolo Principal" 
+                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 min-h-[250px] sm:min-h-[320px]" 
+                         fetchpriority="high">
+                </div>
+                
+                <!-- Imagem Secundária (Direita Cima) -->
+                <div class="overflow-hidden rounded-2xl shadow-lg border-[3px] border-white">
+                    <img src="fatia-hero-2.jpg" 
+                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=400&h=300&fit=crop';" 
+                         alt="Fatia de Bolo Sabor 2" 
+                         class="w-full h-[120px] sm:h-[152px] object-cover hover:scale-105 transition-transform duration-500" 
+                         fetchpriority="high">
+                </div>
+
+                <!-- Imagem Terciária (Direita Baixo) -->
+                <div class="overflow-hidden rounded-2xl shadow-lg border-[3px] border-white">
+                    <img src="fatia-hero-3.jpg" 
+                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1550617931-e17a7b70dce2?w=400&h=300&fit=crop';" 
+                         alt="Fatia de Bolo Sabor 3" 
+                         class="w-full h-[120px] sm:h-[152px] object-cover hover:scale-105 transition-transform duration-500" 
+                         fetchpriority="high">
+                </div>
             </div>
 
             <!-- Subheadline -->
