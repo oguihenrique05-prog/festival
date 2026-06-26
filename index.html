@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festival de Fatias - Fature de R$ 2.000 a R$ 5.000/mês</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fontes (Inter e Poppins conforme o template) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="preload" as="image" href="https://chefgeicygalindo.com.br/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-19-at-20.51.42-5.jpeg?utm_source=1781972445916" fetchpriority="high">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            300: '#f9a8d4',
+                            400: '#f472b6',
+                            500: '#ec4899',
+                            600: '#db2777',
+                            700: '#be185d',
+                            800: '#9d174d',
+                            900: '#831843',
+                        }
+                    },
+                    animation: {
+                        'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #ffffff; color: #1f2937; overflow-x: hidden; }
+        
+        /* Botão de Compra - Foco em Alta Conversão */
+        .btn-success {
+            background-color: #059669;
+            color: white;
+            box-shadow: 0 10px 25px -5px rgba(5, 150, 105, 0.5), 0 8px 10px -6px rgba(5, 150, 105, 0.1);
+            transition: all 0.3s ease;
+        }
+        .btn-success:hover {
+            background-color: #047857;
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(5, 150, 105, 0.5), 0 8px 10px -6px rgba(5, 150, 105, 0.1);
+        }
+
+        /* Comentários Estilo Facebook */
+        .fb-bubble { background-color: #f3f4f6; padding: 12px 16px; border-radius: 18px; position: relative; display: inline-block; width: 100%; }
+        .fb-reactions {
+            position: absolute; right: -5px; bottom: -12px; display: flex; align-items: center; gap: 4px;
+            background: #ffffff; border-radius: 14px; padding: 2px 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            font-size: 12px; color: #65676b; font-weight: 400; z-index: 2;
+        }
+
+        /* Notificação de Vendas (Prova Social) */
+        .notification-show {
+            transform: translateY(0) !important;
+            opacity: 1 !important;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- BARRA DE ESCASSEZ DINÂMICA (TOP BAR) -->
+    <div class="bg-[#dc2626] text-white text-center py-2.5 px-4 text-sm sm:text-[15px] font-bold tracking-wide shadow-md relative z-50 uppercase flex justify-center items-center gap-2">
+        <span class="animate-pulse flex-shrink-0">⚠️</span> 
+        <span>Valor promocional liberado somente hoje: <span id="data-dinamica" class="text-[#fef08a] font-black underline decoration-2 underline-offset-2"></span></span>
+    </div>
+
+    <!-- Script para puxar a data atual -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const dataHoje = new Date();
+            const dataFormatada = dataHoje.toLocaleDateString('pt-BR');
+            document.getElementById('data-dinamica').textContent = dataFormatada;
+        });
+    </script>
+
+    <!-- SECTION 1: HERO / PROMESSA -->
+    <header class="relative bg-brand-50 pt-10 pb-16 overflow-hidden">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            
+            <!-- Tag Pipoca/Fatias -->
+            <div class="inline-block bg-brand-100 text-brand-700 font-bold px-4 py-1.5 rounded-full text-sm mb-6 border border-brand-200 uppercase tracking-wide mt-4">
+                Método Validado • +700 Fatias Vendidas
+            </div>
+            
+            <!-- Headline Matadora -->
+            <h1 class="font-heading text-4xl sm:text-5xl font-black text-gray-900 leading-tight mb-6 tracking-tight">
+                Como faturar de <br>
+                <span class="text-green-600">R$ 2.000 a R$ 5.000/mês</span><br>
+                com <span class="text-brand-600">Festival de Fatias Presencial ou Delivery</span>
+            </h1>
+            
+            <!-- IMAGEM HERO -->
+            <div class="relative mx-auto w-full max-w-sm md:max-w-md mb-6">
+                <img src="https://chefgeicygalindo.com.br/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-19-at-20.51.42-5.jpeg?utm_source=1781972445916" onerror="this.onerror=null; this.src='https://placehold.co/400x400/fce7f3/db2777?text=Festival+de+Fatias'" alt="Festival de Fatias" class="relative z-10 w-full h-auto aspect-square object-cover animate-float rounded-[2rem] shadow-2xl border-4 border-white" fetchpriority="high">
+            </div>
+
+            <!-- Subheadline -->
+            <p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto font-medium leading-relaxed">
+                Descubra como você pode lucrar alto dividindo bolos e vendendo fatias com um visual irresistível, corte perfeito e <strong>zero desperdício de ingredientes.</strong>
+            </p>
+
+            <!-- Área de Botão e Oferta -->
+            <div class="max-w-sm mx-auto flex flex-col items-center">
+                <!-- Tag de Oferta Separada -->
+                <div class="inline-flex items-center justify-center gap-2 bg-brand-600 text-white font-bold text-[13px] py-1.5 px-5 rounded-full mb-4 shadow-md uppercase tracking-wider animate-pulse">
+                    <span class="text-base">🔥</span> <span>Oferta Especial: Apenas R$ 10,00</span>
+                </div>
+                
+                <a href="#oferta" class="btn-success w-full text-center font-black text-lg py-4 px-8 rounded-xl uppercase tracking-wide z-10 relative cursor-pointer">
+                    SIM! QUERO APRENDER ISSO
+                </a>
+                
+                <p class="text-sm text-gray-500 mt-4 font-medium flex items-center justify-center gap-2">
+                    🔒 Compra Segura • Acesso Imediato
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 3: O QUE VOCÊ VAI APRENDER -->
+    <section class="py-20 bg-[#fbf9f6]">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+
+                <h2 class="font-heading text-3xl md:text-4xl font-black text-gray-900 tracking-tight">
+                    Você vai aprender muito mais que <span class="text-[#c1121f]">receitas</span>
+                </h2>
+            </div>
+
+            <!-- Grid de Módulos (Adaptado para o Festival de Fatias) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto mb-12">
+                <div class="flex items-center gap-4 bg-white px-6 py-5 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-600">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <span class="font-bold text-gray-800 text-[15px]">Montagem dos bolos sem erros</span>
+                </div>
+
+                <div class="flex items-center gap-4 bg-white px-6 py-5 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-600">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <span class="font-bold text-gray-800 text-[15px]">Recheios equilibrados e profissionais</span>
+                </div>
+
+                <div class="flex items-center gap-4 bg-white px-6 py-5 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-600">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <span class="font-bold text-gray-800 text-[15px]">Montagem das tortas sem erros</span>
+                </div>
+
+                <div class="flex items-center gap-4 bg-white px-6 py-5 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-600">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <span class="font-bold text-gray-800 text-[15px]">Técnica avançada do corte perfeito</span>
+                </div>
+
+                <div class="flex items-center gap-4 bg-white px-6 py-5 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-600">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <span class="font-bold text-gray-800 text-[15px]">Embalagem para agregar alto valor</span>
+                </div>
+
+                <div class="flex items-center gap-4 bg-white px-6 py-5 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-600">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <span class="font-bold text-gray-800 text-[15px]">Conservação e validade corretas</span>
+                </div>
+
+                <div class="flex items-center gap-4 bg-white px-6 py-5 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-600">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <span class="font-bold text-gray-800 text-[15px]">Organização e venda do Festival (Delivery/Eventos)</span>
+                </div>
+
+                <div class="flex items-center gap-4 bg-white px-6 py-5 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-600">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <span class="font-bold text-gray-800 text-[15px]">13 Receitas validadas para aplicar hoje</span>
+                </div>
+            </div>
+
+            <!-- NOVO BOTÃO ABAIXO DA GRADE -->
+            <div class="max-w-sm mx-auto flex flex-col items-center mt-4">
+                <div class="inline-flex items-center justify-center gap-2 bg-brand-600 text-white font-bold text-[13px] py-1.5 px-5 rounded-full mb-4 shadow-md uppercase tracking-wider animate-pulse">
+                    <span class="text-base">🔥</span> <span>Oferta Especial: Apenas R$ 10,00</span>
+                </div>
+                <a href="#oferta" class="btn-success w-full text-center font-black text-lg py-4 px-8 rounded-xl uppercase tracking-wide z-10 relative cursor-pointer">
+                    SIM! QUERO APRENDER ISSO
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3.5: O FESTIVAL INTEIRO (NOVA SEÇÃO DE OBJEÇÃO) -->
+    <section class="py-20 bg-brand-100 relative overflow-hidden">
+        <!-- Elemento de fundo sutil (Bolinhas mais claras) -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-white opacity-60 blur-[80px]"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-brand-200 opacity-50 blur-[100px]"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-14">
+                <h2 class="font-heading text-3xl md:text-4xl font-black text-gray-900 tracking-tight mb-4 uppercase">
+                    MAS O CURSO ENSINA A MONTAR <br><span class="text-brand-600">O FESTIVAL INTEIRO?</span>
+                </h2>
+                <p class="text-xl text-gray-700 font-medium">
+                    <strong class="text-gray-900">SIM!</strong> Aqui dentro você aprende o plano completo: <br class="sm:hidden"><span class="text-brand-800 font-bold bg-white px-4 py-1.5 rounded-full text-[15px] inline-block mt-4 border border-brand-200 shadow-sm uppercase tracking-wide">Produzir + Vender + Lucrar</span>
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <!-- Card 1 -->
+                <div class="bg-white/90 backdrop-blur-sm border border-white p-6 rounded-2xl flex items-start gap-4 hover:border-brand-300 transition-colors shadow-sm">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center text-brand-600 border border-brand-100">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                    </div>
+                    <div>
+                        <p class="text-gray-600 text-[15px] leading-relaxed">
+                            Aqui você não aprende apenas a cortar a fatia perfeita. <strong class="text-gray-900">Aprende o festival inteiro</strong> — do primeiro grão de açúcar à última venda no WhatsApp.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white/90 backdrop-blur-sm border border-white p-6 rounded-2xl flex items-start gap-4 hover:border-brand-300 transition-colors shadow-sm">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center text-brand-600 border border-brand-100">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                    </div>
+                    <div>
+                        <p class="text-gray-600 text-[15px] leading-relaxed">
+                            Você não vai descobrir nada sozinha. Cada passo, cada prazo e cada decisão <strong class="text-gray-900">já está mapeada</strong> no seu planejamento.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white/90 backdrop-blur-sm border border-white p-6 rounded-2xl flex items-start gap-4 hover:border-brand-300 transition-colors shadow-sm">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center text-brand-600 border border-brand-100">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <div>
+                        <p class="text-gray-600 text-[15px] leading-relaxed">
+                            <strong class="text-gray-900">Zero correria no dia.</strong> É isso que o método de produção e conservação faz por você. Monte tudo com antecedência e foque apenas em entregar.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white/90 backdrop-blur-sm border border-white p-6 rounded-2xl flex items-start gap-4 hover:border-brand-300 transition-colors shadow-sm">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center text-brand-600 border border-brand-100">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <div>
+                        <p class="text-gray-600 text-[15px] leading-relaxed">
+                            Você não vai só "ouvir" como se faz um festival de sucesso. Você terá o passo a passo <strong class="text-gray-900">nos mínimos detalhes</strong>, do começo ao fim.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOTÃO CTA NA SEÇÃO 3.5 -->
+            <div class="max-w-sm mx-auto flex flex-col items-center mt-12 relative z-10">
+                <!-- Tag de Oferta -->
+                <div class="inline-flex items-center justify-center gap-2 bg-brand-600 text-white font-bold text-[13px] py-1.5 px-5 rounded-full mb-4 shadow-md uppercase tracking-wider animate-pulse">
+                    <span class="text-base">🔥</span> <span>Oferta Especial: Apenas R$ 10,00</span>
+                </div>
+                
+                <!-- Botão Ancora -->
+                <a href="#oferta" class="btn-success w-full text-center font-black text-lg py-4 px-8 rounded-xl uppercase tracking-wide cursor-pointer">
+                    QUERO ACESSAR AGORA
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: BÔNUS INCLUSOS -->
+    <section class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-heading text-3xl md:text-4xl font-black text-gray-900 mb-4 tracking-tight uppercase">
+                    Você ainda vai receber <br><span class="text-brand-600">Todos esses Bônus</span>
+                </h2>
+                <p class="text-lg text-gray-600 font-medium">Garanta sua vaga hoje e leve esse arsenal para multiplicar suas vendas.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="w-full lg:w-1/2">
+                    <img src="https://chefgeicygalindo.com.br/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-19-at-20.51.42-3.jpeg?utm_source=1781972445916" onerror="this.onerror=null; this.src='https://placehold.co/400x300/fdf2f8/db2777?text=Mockup+Bonus'" alt="Mockup dos bônus" class="w-full max-w-md mx-auto aspect-square object-cover rounded-[2rem] shadow-xl" loading="lazy">
+                </div>
+                
+                <div class="w-full lg:w-1/2 space-y-4">
+                    <div class="flex gap-4 p-5 bg-gray-50 rounded-2xl border border-gray-100">
+                        <div class="text-3xl">🎨</div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-lg">Pack Canva: Artes e Divulgação</h4>
+                            <p class="text-gray-600 text-sm mt-1">Templates prontos para você postar "Vem aí o Festival de Fatias" e gerar antecipação nas redes sociais.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4 p-5 bg-gray-50 rounded-2xl border border-gray-100">
+                        <div class="text-3xl">📊</div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-lg">Planilha de Rendimento e Preço</h4>
+                            <p class="text-gray-600 text-sm mt-1">Descubra quantas fatias rendem cada forma e saiba exatamente quanto cobrar para ter lucro alto e limpo.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4 p-5 bg-brand-50 rounded-2xl border-2 border-brand-300 shadow-sm">
+                        <div class="text-3xl">🍰</div>
+                        <div>
+                            <h4 class="font-black text-brand-800 text-lg uppercase">13 Receitas Vencedoras</h4>
+                            <div class="grid grid-cols-2 gap-1 text-xs font-bold text-brand-900 mt-2">
+                                <span>• Bolo de Pudim</span>
+                                <span>• Abacaxi c/ Coco</span>
+                                <span>• Morango c/ Brigadeiro</span>
+                                <span>• Ninho c/ Nutella</span>
+                                <span>• Brigadeiro e Branquinho</span>
+                                <span>• Ouro Branco</span>
+                                <span>• Ferrero Rocher</span>
+                                <span>• Maracujá c/ Brigadeiro</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: PROVA SOCIAL E COMUNIDADE -->
+    <section class="py-20 bg-gray-50 border-t border-gray-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-heading text-3xl md:text-4xl font-black text-gray-900 mb-4 tracking-tight">Quem aplica, <span class="text-brand-600">vende tudo!</span></h2>
+            </div>
+            
+            <div class="space-y-6 max-w-2xl mx-auto mb-16">
+                <!-- Comentário 1 -->
+                <div class="flex gap-3">
+                    <div class="w-10 h-10 rounded-full bg-brand-300 text-brand-900 flex items-center justify-center font-bold text-lg flex-shrink-0">P</div>
+                    <div class="flex-1">
+                        <div class="fb-bubble text-left shadow-sm">
+                            <p class="font-bold text-gray-900 text-[14px] mb-1">Patrícia Gomes</p>
+                            <p class="text-gray-800 text-[14px] leading-snug">Fiz meu primeiro festival esse sábado. Preparei 40 fatias de Red Velvet e Dois Amores. Antes do meio dia já tinha zerado tudo! 😱</p>
+                            <div class="fb-reactions"><span>👍</span><span>❤️</span> <span>48</span></div>
+                        </div>
+                        <div class="text-[11px] text-gray-500 font-semibold mt-1.5 ml-3 space-x-3">
+                            <span class="cursor-pointer hover:underline">Curtir</span>
+                            <span class="cursor-pointer hover:underline">Responder</span>
+                            <span class="font-normal">2 h</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Comentário 2 -->
+                <div class="flex gap-3">
+                    <div class="w-10 h-10 rounded-full bg-blue-200 text-blue-800 flex items-center justify-center font-bold text-lg flex-shrink-0">L</div>
+                    <div class="flex-1">
+                        <div class="fb-bubble text-left shadow-sm">
+                            <p class="font-bold text-gray-900 text-[14px] mb-1">Luciana Marques</p>
+                            <p class="text-gray-800 text-[14px] leading-snug">O segredo do corte limpo mudou minha vida. As fatias ficam parecendo vitrine de padaria chique. Os clientes piram 😍</p>
+                            <div class="fb-reactions"><span>❤️</span><span>😮</span> <span>12</span></div>
+                        </div>
+                        <div class="text-[11px] text-gray-500 font-semibold mt-1.5 ml-3 space-x-3">
+                            <span class="cursor-pointer hover:underline">Curtir</span>
+                            <span class="cursor-pointer hover:underline">Responder</span>
+                            <span class="font-normal">4 h</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comentário 3 -->
+                <div class="flex gap-3">
+                    <div class="w-10 h-10 rounded-full bg-green-200 text-green-800 flex items-center justify-center font-bold text-lg flex-shrink-0">A</div>
+                    <div class="flex-1">
+                        <div class="fb-bubble text-left shadow-sm">
+                            <p class="font-bold text-gray-900 text-[14px] mb-1">Ana Clara</p>
+                            <p class="text-gray-800 text-[14px] leading-snug">Eu tinha muito medo de sobrar bolo e tomar prejuízo. Fazer pelo modelo de festival e encomenda igual ensinado tira todo o risco.</p>
+                            <div class="fb-reactions"><span>😆</span><span>👍</span> <span>89</span></div>
+                        </div>
+                        <div class="text-[11px] text-gray-500 font-semibold mt-1.5 ml-3 space-x-3">
+                            <span class="cursor-pointer hover:underline">Curtir</span>
+                            <span class="cursor-pointer hover:underline">Responder</span>
+                            <span class="font-normal">5 h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <p class="text-brand-600 font-bold mb-4 uppercase tracking-wider text-sm">Mais de 700 fatias vendidas na prática</p>
+                <img src="https://chefgeicygalindo.com.br/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-19-at-20.51.42.jpeg?utm_source=1781972445916" onerror="this.onerror=null; this.src='https://placehold.co/400x200/fdf2f8/db2777?text=Festival'" alt="Festival de Fatias Resultados" class="w-full max-w-md mx-auto aspect-video object-cover rounded-xl shadow-md" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: OFERTA FINAL E GARANTIA (R$ 17) -->
+    <section id="oferta" class="py-20 bg-brand-50 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="font-heading text-4xl md:text-5xl font-black text-[#111827] mb-2 tracking-tight uppercase">
+                SEU PLANO ESTÁ <span class="text-[#0fa958]">PRONTO</span>
+            </h2>
+            <p class="text-lg md:text-xl text-gray-600 mb-8 font-medium">Treinamento Completo + Todos os Bônus Inclusos</p>
+
+            <!-- RESUMO DO QUE A ALUNA RECEBE -->
+            <div class="bg-white/80 backdrop-blur-sm rounded-[24px] p-6 md:p-7 shadow-[0_10px_35px_rgba(0,0,0,0.05)] max-w-3xl mx-auto mb-8 border border-white">
+                <p class="text-[#d81b60] font-black text-sm uppercase tracking-[0.2em] mb-5">Você recebe hoje</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-left">
+                    <div class="flex items-start gap-3 bg-white rounded-2xl px-4 py-3 border border-gray-100 shadow-sm">
+                        <span class="text-[#0fa958] font-black text-lg leading-none mt-0.5">✓</span>
+                        <span class="font-bold text-gray-800 text-[15px] leading-snug">Todo o Método Passo a Passo</span>
+                    </div>
+                    <div class="flex items-start gap-3 bg-white rounded-2xl px-4 py-3 border border-gray-100 shadow-sm">
+                        <span class="text-[#0fa958] font-black text-lg leading-none mt-0.5">✓</span>
+                        <span class="font-bold text-gray-800 text-[15px] leading-snug">Técnica Avançada do Corte Perfeito</span>
+                    </div>
+                    <div class="flex items-start gap-3 bg-white rounded-2xl px-4 py-3 border border-gray-100 shadow-sm">
+                        <span class="text-[#0fa958] font-black text-lg leading-none mt-0.5">✓</span>
+                        <span class="font-bold text-gray-800 text-[15px] leading-snug">13 Receitas Completas e Validadas</span>
+                    </div>
+                    <div class="flex items-start gap-3 bg-white rounded-2xl px-4 py-3 border border-gray-100 shadow-sm">
+                        <span class="text-[#0fa958] font-black text-lg leading-none mt-0.5">✓</span>
+                        <span class="font-bold text-gray-800 text-[15px] leading-snug">Estratégia do Festival 24h</span>
+                    </div>
+                    <div class="flex items-start gap-3 bg-white rounded-2xl px-4 py-3 border border-gray-100 shadow-sm">
+                        <span class="text-[#0fa958] font-black text-lg leading-none mt-0.5">✓</span>
+                        <span class="font-bold text-gray-800 text-[15px] leading-snug">Montagem e Embalagem que geram desejo</span>
+                    </div>
+                    <div class="flex items-start gap-3 bg-white rounded-2xl px-4 py-3 border border-gray-100 shadow-sm">
+                        <span class="text-[#0fa958] font-black text-lg leading-none mt-0.5">✓</span>
+                        <span class="font-bold text-gray-800 text-[15px] leading-snug">Planilha de Rendimento e Preço</span>
+                    </div>
+                    <div class="flex items-start gap-3 bg-white rounded-2xl px-4 py-3 border border-gray-100 shadow-sm">
+                        <span class="text-[#0fa958] font-black text-lg leading-none mt-0.5">✓</span>
+                        <span class="font-bold text-gray-800 text-[15px] leading-snug">Pack Canva para Postagens</span>
+                    </div>
+                    <div class="flex items-start gap-3 bg-white rounded-2xl px-4 py-3 border border-gray-100 shadow-sm">
+                        <span class="text-[#0fa958] font-black text-lg leading-none mt-0.5">✓</span>
+                        <span class="font-bold text-gray-800 text-[15px] leading-snug">Suporte VIP para tirar Dúvidas</span>
+                    </div>
+                    <div class="flex items-start gap-3 bg-white rounded-2xl px-4 py-3 border border-gray-100 shadow-sm md:col-span-2">
+                        <span class="text-[#0fa958] font-black text-lg leading-none mt-0.5">✓</span>
+                        <span class="font-bold text-gray-800 text-[15px] leading-snug">Acesso imediato ao conteúdo + garantia incondicional de 7 dias</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CAIXA DE PREÇO ATUALIZADA -->
+            <div class="bg-white rounded-[28px] p-8 md:p-10 shadow-[0_10px_40px_rgba(0,0,0,0.06)] max-w-sm mx-auto mb-8 border border-gray-100">
+                <p class="text-[#64748b] font-medium text-xl mb-1">Por apenas</p>
+                <div class="text-[#d81b60] font-bold text-[64px] leading-none mb-3 tracking-tight font-heading">
+                    R$ 10,00
+                </div>
+                <p class="text-[#94a3b8] font-medium text-[15px]">
+                    <span class="line-through">De R$ 197,00</span> (pagamento único)
+                </p>
+            </div>
+            
+            <!-- BOTÃO CTA CHECKOUT -->
+            <div class="max-w-sm mx-auto">
+                <a href="https://lastlink.com/p/CCD99F123/checkout-payment/" target="_blank" class="block w-full bg-[#0fa958] hover:bg-[#0c8b48] text-white font-bold text-xl py-5 rounded-2xl shadow-[0_8px_20px_rgba(15,169,88,0.25)] transition-transform transform hover:scale-105 tracking-wide mb-3">
+                    COMPRAR AGORA
+                </a>
+                <p class="text-sm text-gray-500 font-semibold flex items-center justify-center gap-1.5">
+                    🔒 Ambiente 100% Seguro e Criptografado
+                </p>
+            </div>
+
+            <!-- Garantia -->
+            <div class="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto">
+                <div class="w-24 h-24 bg-green-100 text-green-600 rounded-full flex items-center justify-center flex-shrink-0 mx-auto sm:mx-0 shadow-sm border-4 border-white">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                </div>
+                <div class="text-center sm:text-left">
+                    <h4 class="font-bold text-gray-900 text-lg mb-1">Garantia Incondicional de 7 Dias</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">O risco é todo nosso. Se você não gostar do material ou achar que não é pra você, devolvemos 100% do seu dinheiro. Sem burocracia, basta enviar uma mensagem.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: FAQ (PERGUNTAS FREQUENTES) -->
+    <section class="py-20 bg-white border-t border-gray-100">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-heading text-3xl md:text-4xl font-black text-gray-900 tracking-tight">Perguntas Frequentes</h2>
+            </div>
+            
+            <div class="space-y-4">
+                <details class="group bg-gray-50 rounded-2xl border border-gray-100 hover:border-brand-300 transition-colors [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-5 text-gray-900 font-bold text-lg md:text-[17px]">
+                        Preciso de ingredientes ou equipamentos caros?
+                    </summary>
+                    <div class="px-5 pb-5 text-gray-600 leading-relaxed text-[15px]">
+                        <strong>Não!</strong> O método foi criado para ser prático e escalável. Você pode começar com os utensílios que já tem na cozinha. As receitas e os cortes são pensados para maximizar o lucro sem precisar de ingredientes de luxo difíceis de achar.
+                    </div>
+                </details>
+                
+                <details class="group bg-gray-50 rounded-2xl border border-gray-100 hover:border-brand-300 transition-colors [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-5 text-gray-900 font-bold text-lg md:text-[17px]">
+                        Como e quando vou receber o acesso?
+                    </summary>
+                    <div class="px-5 pb-5 text-gray-600 leading-relaxed text-[15px]">
+                        <strong>Imediatamente!</strong> Assim que o seu pagamento via PIX ou Cartão for confirmado, você receberá automaticamente um e-mail com o seu link de acesso para a plataforma de alunos.
+                    </div>
+                </details>
+
+                <details class="group bg-gray-50 rounded-2xl border border-gray-100 hover:border-brand-300 transition-colors [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-5 text-gray-900 font-bold text-lg md:text-[17px]">
+                        Eu nunca fiz um festival antes, vou conseguir?
+                    </summary>
+                    <div class="px-5 pb-5 text-gray-600 leading-relaxed text-[15px]">
+                        Com certeza. Nós ensinamos desde a montagem e escolha dos sabores até como planejar o festival no modelo de "encomendas abertas", ou seja: você vende antes de produzir, o que garante <strong>zero risco e zero desperdício.</strong>
+                    </div>
+                </details>
+                
+                <details class="group bg-gray-50 rounded-2xl border border-gray-100 hover:border-brand-300 transition-colors [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-5 text-gray-900 font-bold text-lg md:text-[17px]">
+                        Tem suporte caso eu tenha dúvidas nas receitas?
+                    </summary>
+                    <div class="px-5 pb-5 text-gray-600 leading-relaxed text-[15px]">
+                        Sim! Você terá suporte dedicado dentro da plataforma para tirar todas as dúvidas que surgirem durante a sua jornada de produção e vendas.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER LEGAL -->
+    <footer class="bg-gray-900 py-10 text-center border-t border-gray-800">
+        <div class="max-w-5xl mx-auto px-4">
+            <p class="text-sm text-gray-400 font-medium mb-4">© 2026. Todos os direitos reservados.</p>
+            <p class="text-[11px] text-gray-500 max-w-3xl mx-auto leading-relaxed">
+                Este site não faz parte do site do Facebook ou da Meta Platforms Inc. Além disso, este site NÃO é endossado pelo Facebook de nenhuma maneira. FACEBOOK é uma marca comercial da Meta Platforms, Inc.
+            </p>
+        </div>
+    </footer>
+
+    <!-- POPUP DE NOTIFICAÇÃO DE COMPRA (PROVA SOCIAL DINÂMICA) -->
+    <div id="purchase-notification" class="fixed bottom-4 left-4 md:bottom-6 md:left-6 bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-gray-100 p-3 flex items-center gap-3 z-[100] transform transition-all duration-500 translate-y-24 opacity-0 pointer-events-none max-w-[280px]">
+        <div class="bg-green-100 p-2 rounded-full flex-shrink-0">
+            <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+        </div>
+        <div>
+            <p class="text-sm text-gray-800 font-medium leading-tight">
+                <span id="notify-name" class="font-bold text-gray-900">Marta</span> acabou de comprar
+            </p>
+            <p class="text-[11px] text-gray-500 mt-0.5 font-medium">
+                Há <span id="notify-time">1 minuto</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- SCRIPT DAS NOTIFICAÇÕES -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Lista de nomes e tempos para gerar aleatoriedade (Festival de Fatias)
+            const buyers = [
+                { name: 'Marta', time: '1 minuto' },
+                { name: 'Márcia', time: '4 minutos' },
+                { name: 'Juliana', time: '12 minutos' },
+                { name: 'Ana Paula', time: '23 minutos' },
+                { name: 'Fernanda', time: '5 minutos' },
+                { name: 'Camila', time: '2 minutos' },
+                { name: 'Amanda', time: '8 minutos' },
+                { name: 'Letícia', time: 'agora mesmo' },
+                { name: 'Bruna', time: '15 minutos' },
+                { name: 'Patrícia', time: '3 minutos' }
+            ];
+
+            const notificationEl = document.getElementById('purchase-notification');
+            const nameEl = document.getElementById('notify-name');
+            const timeEl = document.getElementById('notify-time');
+
+            function showNextNotification() {
+                // Escolhe uma compradora aleatória da lista
+                const buyer = buyers[Math.floor(Math.random() * buyers.length)];
+                
+                // Atualiza os textos
+                nameEl.textContent = buyer.name;
+                timeEl.textContent = buyer.time;
+
+                // Mostra a notificação fazendo ela subir e ficar opaca
+                notificationEl.classList.add('notification-show');
+
+                // Esconde a notificação após 5 segundos
+                setTimeout(() => {
+                    notificationEl.classList.remove('notification-show');
+                }, 5000);
+            }
+
+            // Espera 3 segundos após o site abrir para mostrar a primeira
+            setTimeout(() => {
+                showNextNotification();
+                // Depois, continua mostrando uma nova a cada 15 segundos
+                setInterval(showNextNotification, 15000);
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
