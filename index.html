@@ -11,7 +11,7 @@
     <!-- Fontes -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- Preload da primeira imagem -->
+    <!-- Preload da primeira imagem (raiz do GitHub) -->
     <link rel="preload" as="image" href="fatia-hero-1.webp" fetchpriority="high">
     
     <!-- Tailwind CSS -->
@@ -94,6 +94,7 @@
         document.head.appendChild(a);
     </script>
 </head>
+
 <body class="antialiased selection:bg-brand-500 selection:text-white">
 
     <!-- BARRA DE ESCASSEZ DINÂMICA (TOP BAR) -->
@@ -117,59 +118,61 @@
             
             <!-- Tag Pipoca/Fatias -->
             <div class="inline-block bg-brand-100 text-brand-700 font-bold px-4 py-1.5 rounded-full text-sm mb-6 border border-brand-200 uppercase tracking-wide mt-4">
-                Método Validado • Venda tudo sem sair de casa
+                Método Validado • +700 Fatias Vendidas
             </div>
             
-            <!-- Headline Matadora Focada em Delivery e Sem Vitrine -->
+            <!-- Headline Matadora -->
             <h1 class="font-heading text-4xl sm:text-5xl font-black text-gray-900 leading-tight mb-8 tracking-tight">
                 Como faturar de <br>
                 <span class="text-green-600">R$ 2.000 a R$ 5.000/mês</span><br>
-                com fatias perfeitas <span class="text-brand-600">sem depender de vitrine física</span>
+                com <span class="text-brand-600">Festival de Fatias Presencial ou Delivery</span>
             </h1>
-            
-            <!-- GRID DE FOTOS (HERO) -->
-            <div class="grid grid-cols-2 gap-3 sm:gap-4 max-w-lg mx-auto mb-12 mt-6 px-2">
-                <!-- Imagem Principal -->
-                <div class="overflow-hidden rounded-2xl shadow-lg border-[3px] border-white row-span-2">
+
+            <!-- GRID DE FOTOS (HERO) - ASSIMÉTRICO / BENTO BOX -->
+            <div class="grid grid-cols-12 gap-3 sm:gap-4 max-w-2xl mx-auto mb-10 mt-6 px-2">
+                <!-- Imagem Principal (Esquerda - Ocupa 7 colunas) -->
+                <div class="col-span-7 overflow-hidden rounded-[24px] shadow-sm border-[4px] border-white bg-white group">
                     <img src="fatia-hero-1.webp" 
-                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=600&fit=crop';" 
+                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&h=800&fit=crop';" 
                          alt="Fatia de Bolo Principal" 
-                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 min-h-[250px] sm:min-h-[320px]" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 min-h-[250px] sm:min-h-[340px]" 
                          fetchpriority="high">
                 </div>
                 
-                <!-- Imagem Secundária -->
-                <div class="overflow-hidden rounded-2xl shadow-lg border-[3px] border-white">
-                    <img src="fatia-hero-2.webp" 
-                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=400&h=300&fit=crop';" 
-                         alt="Fatia de Bolo Sabor 2" 
-                         class="w-full h-[120px] sm:h-[152px] object-cover hover:scale-105 transition-transform duration-500" 
-                         fetchpriority="high">
-                </div>
-
-                <!-- Imagem Terciária -->
-                <div class="overflow-hidden rounded-2xl shadow-lg border-[3px] border-white">
-                    <img src="fatia-hero-3.webp" 
-                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1550617931-e17a7b70dce2?w=400&h=300&fit=crop';" 
-                         alt="Fatia de Bolo Sabor 3" 
-                         class="w-full h-[120px] sm:h-[152px] object-cover hover:scale-105 transition-transform duration-500" 
-                         fetchpriority="high">
+                <!-- Coluna da Direita (Ocupa 5 colunas com 2 fotos empilhadas) -->
+                <div class="col-span-5 grid grid-rows-2 gap-3 sm:gap-4">
+                    <!-- Foto Cima -->
+                    <div class="overflow-hidden rounded-[20px] shadow-sm border-[4px] border-white bg-white group">
+                        <img src="fatia-hero-2.webp" 
+                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=400&h=400&fit=crop';" 
+                             alt="Fatia de Bolo Sabor 2" 
+                             class="w-full h-full min-h-[120px] sm:min-h-[162px] object-cover group-hover:scale-110 transition-transform duration-700" 
+                             fetchpriority="high">
+                    </div>
+                    <!-- Foto Baixo -->
+                    <div class="overflow-hidden rounded-[20px] shadow-sm border-[4px] border-white bg-white group">
+                        <img src="fatia-hero-3.webp" 
+                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1550617931-e17a7b70dce2?w=400&h=400&fit=crop';" 
+                             alt="Fatia de Bolo Sabor 3" 
+                             class="w-full h-full min-h-[120px] sm:min-h-[162px] object-cover group-hover:scale-110 transition-transform duration-700" 
+                             fetchpriority="high">
+                    </div>
                 </div>
             </div>
 
-            <!-- Subheadline Atualizada -->
+            <!-- Subheadline -->
             <p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto font-medium leading-relaxed">
-                O plano exato para abrir encomendas da sua casa, esgotar seu estoque e entregar fatias perfeitas <strong>sem depender de ponto físico.</strong>
+                Veja o passo a passo completo pra lucrar mais de <strong>2000 reais</strong> no seu primeiro festival de fatias delivery ou presencial.
             </p>
 
             <!-- Área de Botão e Oferta -->
             <div class="max-w-sm mx-auto flex flex-col items-center">
                 <div class="inline-flex items-center justify-center gap-2 bg-brand-600 text-white font-bold text-[13px] py-1.5 px-5 rounded-full mb-4 shadow-md uppercase tracking-wider animate-pulse">
-                    <span class="text-base">🔥</span> <span>Oferta Especial: Apenas R$ 10,00</span>
+                    <span class="text-base">🔥</span> <span>Oferta Especial: A partir de R$ 10,00</span>
                 </div>
                 
                 <a href="#oferta" class="btn-success w-full text-center font-black text-lg py-4 px-8 rounded-xl uppercase tracking-wide z-10 relative cursor-pointer">
-                    SIM! QUERO LOTAR MEU WHATSAPP
+                    SIM! QUERO APRENDER ISSO
                 </a>
                 
                 <p class="text-sm text-gray-500 mt-4 font-medium flex items-center justify-center gap-2">
@@ -179,176 +182,186 @@
         </div>
     </header>
 
-    <!-- SECTION 2: MÓDULOS (O Plano de Ação) -->
+    <!-- SECTION 2: O QUE VOCÊ VAI APRENDER -->
     <section class="py-20 bg-[#fbf9f6]">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="font-heading text-3xl md:text-4xl font-black text-gray-900 tracking-tight">
-                    O Plano de Ação: Tudo que você precisa para <span class="text-[#c1121f]">esgotar sua produção</span>
+                    Você vai aprender muito mais que <span class="text-[#c1121f]">receitas</span>
                 </h2>
-                <p class="text-lg text-gray-600 font-medium mt-4">O passo a passo estratégico (e o cardápio exato) para vender tudo em poucas horas.</p>
             </div>
-            
+
+            <!-- Grid de Módulos com Ícones Vetoriais -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto mb-12">
                 
-                <!-- Módulo 1 (Destaque das Receitas) -->
-                <div class="flex items-start gap-4 bg-white px-5 py-5 rounded-2xl shadow-sm border border-brand-200 hover:border-brand-400 transition-colors relative overflow-hidden md:col-span-2">
-                    <div class="absolute top-0 right-0 bg-brand-100 text-brand-800 text-[10px] font-black uppercase px-3 py-1 rounded-bl-lg tracking-wider">O Mais Desejado</div>
-                    <div class="w-14 h-14 rounded-full bg-brand-50 flex items-center justify-center shadow-sm border border-brand-100 flex-shrink-0 mt-1">
-                        <span class="text-xl font-black text-brand-600">1</span>
+                <!-- Módulo 1 -->
+                <div class="flex items-center gap-4 bg-white px-5 py-4 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="w-14 h-14 rounded-full bg-brand-50 flex items-center justify-center shadow-sm border border-brand-100 flex-shrink-0" title="Módulo 1">
+                        <svg class="w-7 h-7 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" /></svg>
                     </div>
                     <div>
-                        <h4 class="font-black text-lg text-gray-900 leading-tight mb-1.5">O Cardápio de Ouro (As 13 Receitas Vencedoras)</h4>
-                        <p class="text-sm text-gray-600 leading-relaxed mb-3">O passo a passo das massas e recheios exatos que fazem o cliente levar 3 fatias de uma vez. Você vai aprender a fazer os campeões absolutos de vendas:</p>
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-[13px] font-bold text-brand-900 bg-brand-50/50 p-3 rounded-xl border border-brand-50">
-                            <span class="flex items-center gap-1"><span class="text-brand-500">•</span> Bolo de Pudim</span>
-                            <span class="flex items-center gap-1"><span class="text-brand-500">•</span> Red Velvet</span>
-                            <span class="flex items-center gap-1"><span class="text-brand-500">•</span> Ninho c/ Nutella</span>
-                            <span class="flex items-center gap-1"><span class="text-brand-500">•</span> Maracujá Trufado</span>
-                            <span class="flex items-center gap-1"><span class="text-brand-500">•</span> Ouro Branco</span>
-                            <span class="flex items-center gap-1"><span class="text-brand-500">•</span> Ferrero Rocher</span>
-                            <span class="flex items-center gap-1"><span class="text-brand-500">•</span> Dois Amores</span>
-                            <span class="flex items-center gap-1"><span class="text-brand-500">•</span> Morango c/ Creme</span>
-                        </div>
+                        <h4 class="font-black text-[15px] text-gray-900 leading-tight mb-0.5">Massas e bases</h4>
+                        <p class="text-[12px] text-gray-600 leading-snug">Preparos pensados para fatias com estrutura para montagem.</p>
                     </div>
                 </div>
 
                 <!-- Módulo 2 -->
-                <div class="flex items-center gap-4 bg-white px-5 py-4 rounded-2xl shadow-sm border border-gray-100 hover:border-brand-200 transition-colors">
-                    <div class="w-14 h-14 rounded-full bg-brand-50 flex items-center justify-center shadow-sm border border-brand-100 flex-shrink-0">
-                        <span class="text-xl font-black text-brand-600">2</span>
+                <div class="flex items-center gap-4 bg-white px-5 py-4 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="w-14 h-14 rounded-full bg-brand-50 flex items-center justify-center shadow-sm border border-brand-100 flex-shrink-0" title="Módulo 2">
+                        <svg class="w-7 h-7 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z" /></svg>
                     </div>
                     <div>
-                        <h4 class="font-black text-[15px] text-gray-900 leading-tight mb-0.5">Estratégia de Congelamento (Perda Zero)</h4>
-                        <p class="text-[12px] text-gray-600 leading-snug">A técnica para congelar fatias prontas e descongelar mantendo a textura de bolo fresco. O fim do desperdício.</p>
+                        <h4 class="font-black text-[15px] text-gray-900 leading-tight mb-0.5">Recheios e texturas</h4>
+                        <p class="text-[12px] text-gray-600 leading-snug">Como trabalhar recheios equilibrados com acabamento profissional.</p>
                     </div>
                 </div>
 
                 <!-- Módulo 3 -->
-                <div class="flex items-center gap-4 bg-white px-5 py-4 rounded-2xl shadow-sm border border-gray-100 hover:border-brand-200 transition-colors">
-                    <div class="w-14 h-14 rounded-full bg-brand-50 flex items-center justify-center shadow-sm border border-brand-100 flex-shrink-0">
-                        <span class="text-xl font-black text-brand-600">3</span>
+                <div class="flex items-center gap-4 bg-white px-5 py-4 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="w-14 h-14 rounded-full bg-brand-50 flex items-center justify-center shadow-sm border border-brand-100 flex-shrink-0" title="Módulo 3">
+                        <svg class="w-7 h-7 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m-8 4v6" /></svg>
                     </div>
                     <div>
-                        <h4 class="font-black text-[15px] text-gray-900 leading-tight mb-0.5">WhatsApp Lotado (A Antecipação)</h4>
-                        <p class="text-[12px] text-gray-600 leading-snug">O que postar no Instagram dias antes do Festival para deixar sua audiência desesperada para comprar.</p>
+                        <h4 class="font-black text-[15px] text-gray-900 leading-tight mb-0.5">Montagem dos bolos</h4>
+                        <p class="text-[12px] text-gray-600 leading-snug">O passo a passo para montar e valorizar o corte perfeito.</p>
                     </div>
                 </div>
 
                 <!-- Módulo 4 -->
-                <div class="flex items-center gap-4 bg-white px-5 py-4 rounded-2xl shadow-sm border border-gray-100 hover:border-brand-200 transition-colors">
-                    <div class="w-14 h-14 rounded-full bg-brand-50 flex items-center justify-center shadow-sm border border-brand-100 flex-shrink-0">
-                        <span class="text-xl font-black text-brand-600">4</span>
+                <div class="flex items-center gap-4 bg-white px-5 py-4 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="w-14 h-14 rounded-full bg-brand-50 flex items-center justify-center shadow-sm border border-brand-100 flex-shrink-0" title="Módulo 4">
+                        <svg class="w-7 h-7 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879-2.879M12 12L9.121 14.121m0 0a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243zm0 0l-2.879 2.879m0 0a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243z" /></svg>
                     </div>
                     <div>
-                        <h4 class="font-black text-[15px] text-gray-900 leading-tight mb-0.5">Scripts de Venda Prontos</h4>
-                        <p class="text-[12px] text-gray-600 leading-snug">Textos validadas! Saiba exatamente o que responder para conduzir o cliente ao PIX sem enrolação.</p>
+                        <h4 class="font-black text-[15px] text-gray-900 leading-tight mb-0.5">Corte das fatias</h4>
+                        <p class="text-[12px] text-gray-600 leading-snug">Técnica segura para evitar desperdícios e deixar o bolo lindo.</p>
                     </div>
                 </div>
 
                 <!-- Módulo 5 -->
-                <div class="flex items-center gap-4 bg-white px-5 py-4 rounded-2xl shadow-sm border border-gray-100 hover:border-brand-200 transition-colors">
-                    <div class="w-14 h-14 rounded-full bg-brand-50 flex items-center justify-center shadow-sm border border-brand-100 flex-shrink-0">
-                        <span class="text-xl font-black text-brand-600">5</span>
+                <div class="flex items-center gap-4 bg-white px-5 py-4 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="w-14 h-14 rounded-full bg-brand-50 flex items-center justify-center shadow-sm border border-brand-100 flex-shrink-0" title="Módulo 5">
+                        <svg class="w-7 h-7 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
                     </div>
                     <div>
-                        <h4 class="font-black text-[15px] text-gray-900 leading-tight mb-0.5">Fotos que Vendem Sozinhas</h4>
-                        <p class="text-[12px] text-gray-600 leading-snug">Como montar, cortar fatias perfeitas e usar a câmera do seu celular para tirar fotos que geram desejo imediato.</p>
+                        <h4 class="font-black text-[15px] text-gray-900 leading-tight mb-0.5">Embalagem</h4>
+                        <p class="text-[12px] text-gray-600 leading-snug">Cuidados para apresentar as fatias prontas para venda.</p>
                     </div>
                 </div>
 
                 <!-- Módulo 6 -->
-                <div class="flex items-center gap-4 bg-white px-5 py-4 rounded-2xl shadow-sm border border-gray-100 hover:border-brand-200 transition-colors">
-                    <div class="w-14 h-14 rounded-full bg-brand-50 flex items-center justify-center shadow-sm border border-brand-100 flex-shrink-0">
-                        <span class="text-xl font-black text-brand-600">6</span>
+                <div class="flex items-center gap-4 bg-white px-5 py-4 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="w-14 h-14 rounded-full bg-brand-50 flex items-center justify-center shadow-sm border border-brand-100 flex-shrink-0" title="Módulo 6">
+                        <svg class="w-7 h-7 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                     </div>
                     <div>
-                        <h4 class="font-black text-[15px] text-gray-900 leading-tight mb-0.5">Fornecedores (Compras Inteligentes)</h4>
-                        <p class="text-[12px] text-gray-600 leading-snug">Onde comprar ingredientes mais baratos e qual embalagem usar para lucrar mais sem parecer barato.</p>
+                        <h4 class="font-black text-[15px] text-gray-900 leading-tight mb-0.5">Conservação</h4>
+                        <p class="text-[12px] text-gray-600 leading-snug">Orientações para manter o bolo bonito e seguro por mais tempo.</p>
                     </div>
                 </div>
 
                 <!-- Módulo 7 -->
-                <div class="flex items-center gap-4 bg-white px-5 py-4 rounded-2xl shadow-sm border border-gray-100 hover:border-brand-200 transition-colors">
-                    <div class="w-14 h-14 rounded-full bg-brand-50 flex items-center justify-center shadow-sm border border-brand-100 flex-shrink-0">
-                        <span class="text-xl font-black text-brand-600">7</span>
+                <div class="flex items-center gap-4 bg-white px-5 py-4 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="w-14 h-14 rounded-full bg-brand-50 flex items-center justify-center shadow-sm border border-brand-100 flex-shrink-0" title="Módulo 7">
+                        <svg class="w-7 h-7 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
                     </div>
                     <div>
-                        <h4 class="font-black text-[15px] text-gray-900 leading-tight mb-0.5">Logística de Delivery (Sem Vitrine)</h4>
-                        <p class="text-[12px] text-gray-600 leading-snug">Como organizar as entregas pelo motoboy sem a fatia chegar tombada, vazando ou feia para o cliente.</p>
+                        <h4 class="font-black text-[15px] text-gray-900 leading-tight mb-0.5">Sugestões de venda</h4>
+                        <p class="text-[12px] text-gray-600 leading-snug">Como adaptar as vendas para evento, delivery ou vitrine.</p>
                     </div>
                 </div>
+
+                <!-- Módulo 8 -->
+                <div class="flex items-center gap-4 bg-white px-5 py-4 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="w-14 h-14 rounded-full bg-brand-50 flex items-center justify-center shadow-sm border border-brand-100 flex-shrink-0" title="Módulo 8">
+                        <svg class="w-7 h-7 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-black text-[15px] text-gray-900 leading-tight mb-0.5">Organização do festival</h4>
+                        <p class="text-[12px] text-gray-600 leading-snug">Como estruturar tudo evitando correria e esquecimentos.</p>
+                    </div>
+                </div>
+
             </div>
 
             <!-- BOTÃO ABAIXO DA GRADE -->
             <div class="max-w-sm mx-auto flex flex-col items-center mt-4">
                 <div class="inline-flex items-center justify-center gap-2 bg-brand-600 text-white font-bold text-[13px] py-1.5 px-5 rounded-full mb-4 shadow-md uppercase tracking-wider animate-pulse">
-                    <span class="text-base">🔥</span> <span>Oferta Especial: Apenas R$ 10,00</span>
+                    <span class="text-base">🔥</span> <span>Oferta Especial: A partir de R$ 10,00</span>
                 </div>
                 <a href="#oferta" class="btn-success w-full text-center font-black text-lg py-4 px-8 rounded-xl uppercase tracking-wide z-10 relative cursor-pointer">
-                    SIM! QUERO ESSE SISTEMA
+                    SIM! QUERO APRENDER ISSO
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 3: MAS O CURSO ENSINA A MONTAR O DELIVERY INTEIRO? -->
+    <!-- SECTION 3: MAS O CURSO ENSINA A MONTAR O FESTIVAL INTEIRO? -->
     <section class="py-20 bg-brand-50 relative overflow-hidden">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-14">
                 <h2 class="font-heading text-3xl md:text-4xl font-black text-gray-900 tracking-tight mb-4 uppercase leading-tight">
-                    MAS O CURSO ENSINA A MONTAR O <span class="text-brand-600">DELIVERY INTEIRO?</span>
+                    MAS O CURSO ENSINA A MONTAR O <span class="text-brand-600">FESTIVAL INTEIRO?</span>
                 </h2>
                 <p class="text-lg text-gray-700 font-medium">
-                    <strong>SIM!</strong> Da compra dos insumos até o bolo na casa do cliente: <br class="sm:hidden"><span class="text-brand-800 font-black bg-white px-4 py-1.5 rounded-full text-[15px] inline-block mt-4 border border-brand-200 shadow-sm uppercase tracking-widest">Produzir + Vender + Entregar</span>
+                    <strong>SIM!</strong> Aqui dentro você aprende o plano completo: <br class="sm:hidden"><span class="text-brand-800 font-black bg-white px-4 py-1.5 rounded-full text-[15px] inline-block mt-4 border border-brand-200 shadow-sm uppercase tracking-widest">Produzir + Vender + Lucrar</span>
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-12">
                 <!-- Card 1 -->
                 <div class="bg-white/90 backdrop-blur-sm border border-white p-6 rounded-2xl flex items-start gap-4 shadow-sm">
-                    <div class="flex-shrink-0 w-8 h-8 rounded-md bg-brand-100 flex items-center justify-center text-brand-600 font-black text-lg">↗</div>
+                    <div class="flex-shrink-0 w-8 h-8 rounded-md bg-brand-100 flex items-center justify-center text-brand-600 font-black text-lg">
+                        ↗
+                    </div>
                     <div>
                         <p class="text-gray-700 text-[15px] leading-relaxed font-medium">
-                            Aqui você não aprende só a fazer bolo. Aprende a <strong class="text-gray-900">logística de um delivery</strong> de sucesso operando da sua própria cozinha.
+                            Aqui você não aprende só a fatia. Aprende o <strong class="text-gray-900">festival inteiro</strong> — do primeiro grão de açúcar à última venda.
                         </p>
                     </div>
                 </div>
 
                 <!-- Card 2 -->
                 <div class="bg-white/90 backdrop-blur-sm border border-white p-6 rounded-2xl flex items-start gap-4 shadow-sm">
-                    <div class="flex-shrink-0 w-8 h-8 rounded-md bg-brand-100 flex items-center justify-center text-brand-600 font-black text-lg">↗</div>
+                    <div class="flex-shrink-0 w-8 h-8 rounded-md bg-brand-100 flex items-center justify-center text-brand-600 font-black text-lg">
+                        ↗
+                    </div>
                     <div>
                         <p class="text-gray-700 text-[15px] leading-relaxed font-medium">
-                            Nada de adivinhação. O roteiro de postagens para o Instagram e os <strong class="text-gray-900">scripts do WhatsApp</strong> já estão prontos para copiar e colar.
+                            Você não vai descobrir nada sozinha. Cada passo, cada prazo e cada decisão <strong class="text-gray-900">já está mapeada</strong> no seu planejamento.
                         </p>
                     </div>
                 </div>
 
                 <!-- Card 3 -->
                 <div class="bg-white/90 backdrop-blur-sm border border-white p-6 rounded-2xl flex items-start gap-4 shadow-sm">
-                    <div class="flex-shrink-0 w-8 h-8 rounded-md bg-brand-100 flex items-center justify-center text-brand-600 font-black text-lg">↗</div>
+                    <div class="flex-shrink-0 w-8 h-8 rounded-md bg-brand-100 flex items-center justify-center text-brand-600 font-black text-lg">
+                        ↗
+                    </div>
                     <div>
                         <p class="text-gray-700 text-[15px] leading-relaxed font-medium">
-                            <strong class="text-gray-900">Acabe com a correria.</strong> Você vai aprender a abrir pedidos na terça, fechar na quinta e focar apenas na produção no sábado.
+                            <strong class="text-gray-900">Zero correria no dia.</strong> É isso que o método de produção, montagem e conservação correta de bolos faz por você.
                         </p>
                     </div>
                 </div>
 
                 <!-- Card 4 -->
                 <div class="bg-white/90 backdrop-blur-sm border border-white p-6 rounded-2xl flex items-start gap-4 shadow-sm">
-                    <div class="flex-shrink-0 w-8 h-8 rounded-md bg-brand-100 flex items-center justify-center text-brand-600 font-black text-lg">↗</div>
+                    <div class="flex-shrink-0 w-8 h-8 rounded-md bg-brand-100 flex items-center justify-center text-brand-600 font-black text-lg">
+                        ↗
+                    </div>
                     <div>
                         <p class="text-gray-700 text-[15px] leading-relaxed font-medium">
-                            Trabalhe sob demanda. Receba primeiro, produza depois. Essa é a regra número um para <strong class="text-gray-900">nunca tomar prejuízo</strong> com estoque parado.
+                            Você não vai só "ouvir" como se faz um festival de sucesso. Você terá o passo a passo <strong class="text-gray-900">nos mínimos detalhes</strong>, do começo ao fim.
                         </p>
                     </div>
                 </div>
             </div>
             
+            <!-- Botão Ancorado na Nova Seção -->
             <div class="max-w-sm mx-auto flex flex-col items-center">
                 <p class="text-gray-500 font-bold text-xs uppercase tracking-widest mb-2">Garanta seu acesso agora por</p>
-                <div class="text-brand-600 font-black text-2xl mb-4">Apenas R$ 10,00</div>
+                <div class="text-brand-600 font-black text-2xl mb-4">A partir de R$ 10,00</div>
                 <a href="#oferta" class="btn-success w-full text-center font-black text-lg py-4 px-8 rounded-xl uppercase tracking-wide cursor-pointer">
                     SIM! QUERO ESSE PLANO
                 </a>
@@ -363,11 +376,12 @@
                 <h2 class="font-heading text-3xl md:text-4xl font-black text-gray-900 mb-4 tracking-tight uppercase">
                     Você ainda vai receber <br><span class="text-brand-600">Todos esses Bônus</span>
                 </h2>
-                <p class="text-lg text-gray-600 font-medium">As ferramentas exatas para automatizar suas vendas e precificação.</p>
+                <p class="text-lg text-gray-600 font-medium">Garanta sua vaga hoje e leve esse arsenal para multiplicar suas vendas.</p>
             </div>
             
             <div class="flex flex-col lg:flex-row gap-12 items-center">
                 <div class="w-full lg:w-1/2">
+                    <!-- Imagem Mockup Bonus (Raiz do GitHub) -->
                     <img src="mockup-bonus.webp" 
                          onerror="this.onerror=null; this.src='https://placehold.co/600x600/fdf2f8/db2777?text=Mockup+dos+Bonus';" 
                          alt="Mockup dos bônus do Festival" 
@@ -376,30 +390,36 @@
                 </div>
                 
                 <div class="w-full lg:w-1/2 space-y-4">
-                    <!-- Bonus 1 -->
-                    <div class="flex gap-4 p-5 bg-gray-50 rounded-2xl border border-gray-100">
-                        <div class="text-3xl">📊</div>
-                        <div>
-                            <h4 class="font-bold text-gray-900 text-lg">Planilha de Precificação Automática</h4>
-                            <p class="text-gray-600 text-sm mt-1">Coloque o valor que pagou no ingrediente e ela te diz por quanto vender a fatia. Pare de chutar preço e garanta lucro.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Bonus 2 -->
                     <div class="flex gap-4 p-5 bg-gray-50 rounded-2xl border border-gray-100">
                         <div class="text-3xl">🎨</div>
                         <div>
-                            <h4 class="font-bold text-gray-900 text-lg">Pack Canva: Festival de Fatias</h4>
-                            <p class="text-gray-600 text-sm mt-1">Artes prontas para postar. Templates validados como "Faltam 3 Dias", "Cardápio Liberado" e o tão desejado "Esgotado".</p>
+                            <h4 class="font-bold text-gray-900 text-lg">Pack Canva: Artes e Divulgação</h4>
+                            <p class="text-gray-600 text-sm mt-1">Templates prontos para você postar "Vem aí o Festival de Fatias" e gerar antecipação nas redes sociais.</p>
                         </div>
                     </div>
                     
-                    <!-- Bonus 3 -->
-                    <div class="flex gap-4 p-5 bg-brand-50 rounded-2xl border-2 border-brand-300 shadow-sm">
-                        <div class="text-3xl">📱</div>
+                    <div class="flex gap-4 p-5 bg-gray-50 rounded-2xl border border-gray-100">
+                        <div class="text-3xl">📊</div>
                         <div>
-                            <h4 class="font-black text-brand-800 text-lg uppercase">Catálogo Rápido no WhatsApp</h4>
-                            <p class="text-gray-700 text-sm mt-1 font-medium">Como estruturar o seu catálogo no WhatsApp Business para o cliente escolher a fatia, ver a foto bonita e fechar o pedido sozinho, sem tomar seu tempo.</p>
+                            <h4 class="font-bold text-gray-900 text-lg">Planilha de Rendimento e Preço</h4>
+                            <p class="text-gray-600 text-sm mt-1">Descubra quantas fatias rendem cada forma e saiba exatamente quanto cobrar para ter lucro alto e limpo.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4 p-5 bg-brand-50 rounded-2xl border-2 border-brand-300 shadow-sm">
+                        <div class="text-3xl">🍰</div>
+                        <div>
+                            <h4 class="font-black text-brand-800 text-lg uppercase">13 Receitas Vencedoras</h4>
+                            <div class="grid grid-cols-2 gap-1 text-xs font-bold text-brand-900 mt-2">
+                                <span>• Bolo de Pudim</span>
+                                <span>• Abacaxi c/ Coco</span>
+                                <span>• Morango c/ Brigadeiro</span>
+                                <span>• Ninho c/ Nutella</span>
+                                <span>• Brigadeiro e Branquinho</span>
+                                <span>• Ouro Branco</span>
+                                <span>• Ferrero Rocher</span>
+                                <span>• Maracujá c/ Brigadeiro</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -411,7 +431,7 @@
     <section class="py-20 bg-gray-50 border-t border-gray-100">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="font-heading text-3xl md:text-4xl font-black text-gray-900 mb-4 tracking-tight">Quem aplica o método, <span class="text-brand-600">vende tudo!</span></h2>
+                <h2 class="font-heading text-3xl md:text-4xl font-black text-gray-900 mb-4 tracking-tight">Quem aplica, <span class="text-brand-600">vende tudo!</span></h2>
             </div>
             
             <div class="space-y-6 max-w-2xl mx-auto mb-16">
@@ -421,7 +441,7 @@
                     <div class="flex-1">
                         <div class="fb-bubble text-left shadow-sm">
                             <p class="font-bold text-gray-900 text-[14px] mb-1">Patrícia Gomes</p>
-                            <p class="text-gray-800 text-[14px] leading-snug">Usei a estratégia de encomendas no WhatsApp que a Mari Farias ensina. Abri o cardápio na quarta e na sexta já tinha 40 fatias vendidas. Não sobrou nada pra conta história! 😱</p>
+                            <p class="text-gray-800 text-[14px] leading-snug">Fiz meu primeiro festival esse sábado. Preparei 40 fatias de Red Velvet e Dois Amores. Antes do meio dia já tinha zerado tudo! 😱</p>
                             <div class="fb-reactions"><span>👍</span><span>❤️</span> <span>48</span></div>
                         </div>
                         <div class="text-[11px] text-gray-500 font-semibold mt-1.5 ml-3 space-x-3">
@@ -438,7 +458,7 @@
                     <div class="flex-1">
                         <div class="fb-bubble text-left shadow-sm">
                             <p class="font-bold text-gray-900 text-[14px] mb-1">Luciana Marques</p>
-                            <p class="text-gray-800 text-[14px] leading-snug">Os clientes estão elogiando muito o tamanho das fatias (200g reais) e a embalagem. Chega perfeito na casa deles pelo motoboy. Muito obrigada pelo método!</p>
+                            <p class="text-gray-800 text-[14px] leading-snug">O segredo do corte limpo mudou minha vida. As fatias de bolo ficam parecendo vitrine de padaria chique. Os clientes piram 😍</p>
                             <div class="fb-reactions"><span>❤️</span><span>😮</span> <span>12</span></div>
                         </div>
                         <div class="text-[11px] text-gray-500 font-semibold mt-1.5 ml-3 space-x-3">
@@ -455,7 +475,7 @@
                     <div class="flex-1">
                         <div class="fb-bubble text-left shadow-sm">
                             <p class="font-bold text-gray-900 text-[14px] mb-1">Ana Clara</p>
-                            <p class="text-gray-800 text-[14px] leading-snug">Eu morria de medo de sobrar bolo. Fazer pelo modelo de encomenda fechada mudou meu jogo. Só compro o material depois que o cliente já pagou no PIX. Lucro limpo.</p>
+                            <p class="text-gray-800 text-[14px] leading-snug">Eu tinha muito medo de sobrar bolo e tomar prejuízo. Fazer pelo modelo de festival e encomenda igual ensinado tira todo o risco.</p>
                             <div class="fb-reactions"><span>😆</span><span>👍</span> <span>89</span></div>
                         </div>
                         <div class="text-[11px] text-gray-500 font-semibold mt-1.5 ml-3 space-x-3">
@@ -468,7 +488,8 @@
             </div>
             
             <div class="text-center">
-                <p class="text-brand-600 font-bold mb-4 uppercase tracking-wider text-sm">Alunas lucrando na prática</p>
+                <p class="text-brand-600 font-bold mb-4 uppercase tracking-wider text-sm">Mais de 700 fatias vendidas na prática</p>
+                <!-- Imagem Comunidade (Raiz do GitHub) -->
                 <img src="comunidade.webp" 
                      onerror="this.onerror=null; this.src='https://placehold.co/600x350/fdf2f8/db2777?text=Alunas+Lucrando';" 
                      alt="Resultados de Vendas de Fatias de Bolo" 
@@ -478,87 +499,159 @@
         </div>
     </section>
 
-    <!-- SECTION 6: OFERTA FINAL E GARANTIA (R$ 10) -->
+    <!-- SECTION 6: OFERTA FINAL E GARANTIA -->
     <section id="oferta" class="py-20 bg-brand-50 relative overflow-hidden">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <h2 class="font-heading text-4xl md:text-5xl font-black text-[#111827] mb-2 tracking-tight uppercase">
-                SEU PLANO ESTÁ <span class="text-[#0fa958]">PRONTO</span>
+                ESCOLHA O SEU <span class="text-[#0fa958]">PLANO</span>
             </h2>
-            <p class="text-lg md:text-xl text-gray-600 mb-8 font-medium">Treinamento Completo + Todos os Bônus Inclusos</p>
+            <p class="text-lg md:text-xl text-gray-600 mb-12 font-medium">Selecione a opção que melhor atende ao seu momento atual</p>
 
-            <!-- RESUMO DO QUE A ALUNA RECEBE -->
-            <div class="bg-white/80 backdrop-blur-sm rounded-[24px] p-6 md:p-7 shadow-[0_10px_35px_rgba(0,0,0,0.05)] max-w-3xl mx-auto mb-8 border border-white">
-                <p class="text-[#d81b60] font-black text-sm uppercase tracking-[0.2em] mb-5">Você recebe hoje</p>
+            <!-- GRID DE OFERTAS (LADO A LADO) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16 items-end">
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-left">
-                    <div class="flex items-start gap-3 bg-white rounded-2xl px-4 py-3 border border-gray-100 shadow-sm">
-                        <span class="text-[#0fa958] font-black text-lg leading-none mt-0.5">✓</span>
-                        <span class="font-bold text-gray-800 text-[15px] leading-snug">Método Completo do Delivery de Fatias</span>
+                <!-- PLANO BÁSICO (R$ 10) -->
+                <div class="bg-white rounded-[28px] p-6 sm:p-8 shadow-sm border-2 border-gray-200 flex flex-col relative opacity-90 hover:opacity-100 transition-opacity md:h-[95%]">
+                    <div class="mb-4">
+                        <h3 class="text-gray-500 font-black text-xl uppercase tracking-wider mb-1">Plano Básico</h3>
+                        <p class="text-gray-400 text-[13px] font-medium h-10">Apenas o material de leitura em PDF. Sem recursos visuais.</p>
                     </div>
-                    <div class="flex items-start gap-3 bg-white rounded-2xl px-4 py-3 border border-gray-100 shadow-sm">
-                        <span class="text-[#0fa958] font-black text-lg leading-none mt-0.5">✓</span>
-                        <span class="font-bold text-gray-800 text-[15px] leading-snug">A Técnica do Congelamento Perfeito</span>
+                    
+                    <div class="mb-6">
+                        <p class="text-[#64748b] font-medium text-sm mb-1">Pagamento Único</p>
+                        <div class="text-gray-800 font-bold text-5xl leading-none tracking-tight font-heading">
+                            R$ 10
+                        </div>
                     </div>
-                    <div class="flex items-start gap-3 bg-white rounded-2xl px-4 py-3 border border-gray-100 shadow-sm">
-                        <span class="text-[#0fa958] font-black text-lg leading-none mt-0.5">✓</span>
-                        <span class="font-bold text-gray-800 text-[15px] leading-snug">As 13 Receitas mais Vendidas</span>
+
+                    <div class="flex-1 space-y-4 text-left mb-8 pt-6 border-t border-gray-100">
+                        <div class="flex items-start gap-3">
+                            <span class="text-gray-400 font-black text-lg mt-0.5">✓</span>
+                            <span class="text-gray-600 font-bold text-[14px]">Apostilas Digitais (Textos e Receitas)</span>
+                        </div>
+                        <div class="flex items-start gap-3 opacity-50">
+                            <span class="text-red-500 font-black text-lg mt-0.5">✗</span>
+                            <span class="text-gray-500 text-[14px] font-medium line-through decoration-red-300">Sem Videoaulas passo a passo</span>
+                        </div>
+                        <div class="flex items-start gap-3 opacity-50">
+                            <span class="text-red-500 font-black text-lg mt-0.5">✗</span>
+                            <span class="text-gray-500 text-[14px] font-medium line-through decoration-red-300">Sem Bônus (Pack Canva, Planilhas)</span>
+                        </div>
+                        <div class="flex items-start gap-3 opacity-50">
+                            <span class="text-red-500 font-black text-lg mt-0.5">✗</span>
+                            <span class="text-gray-500 text-[14px] font-medium line-through decoration-red-300">Sem Suporte tira-dúvidas VIP</span>
+                        </div>
+                        <div class="flex items-start gap-3 opacity-50">
+                            <span class="text-red-500 font-black text-lg mt-0.5">✗</span>
+                            <span class="text-gray-500 text-[14px] font-medium line-through decoration-red-300">Perde os 16 Cursos Extras da Escola</span>
+                        </div>
                     </div>
-                    <div class="flex items-start gap-3 bg-white rounded-2xl px-4 py-3 border border-gray-100 shadow-sm">
-                        <span class="text-[#0fa958] font-black text-lg leading-none mt-0.5">✓</span>
-                        <span class="font-bold text-gray-800 text-[15px] leading-snug">Estratégia de Vendas Antecipadas no WhatsApp</span>
-                    </div>
-                    <div class="flex items-start gap-3 bg-white rounded-2xl px-4 py-3 border border-gray-100 shadow-sm">
-                        <span class="text-[#0fa958] font-black text-lg leading-none mt-0.5">✓</span>
-                        <span class="font-bold text-gray-800 text-[15px] leading-snug">Como Embalar para o Motoboy não Destruir</span>
-                    </div>
-                    <div class="flex items-start gap-3 bg-white rounded-2xl px-4 py-3 border border-gray-100 shadow-sm">
-                        <span class="text-[#0fa958] font-black text-lg leading-none mt-0.5">✓</span>
-                        <span class="font-bold text-gray-800 text-[15px] leading-snug">Planilha de Rendimento e Precificação</span>
-                    </div>
-                    <div class="flex items-start gap-3 bg-white rounded-2xl px-4 py-3 border border-gray-100 shadow-sm">
-                        <span class="text-[#0fa958] font-black text-lg leading-none mt-0.5">✓</span>
-                        <span class="font-bold text-gray-800 text-[15px] leading-snug">Pack Canva de Divulgação Pronta</span>
-                    </div>
-                    <div class="flex items-start gap-3 bg-white rounded-2xl px-4 py-3 border border-gray-100 shadow-sm">
-                        <span class="text-[#0fa958] font-black text-lg leading-none mt-0.5">✓</span>
-                        <span class="font-bold text-gray-800 text-[15px] leading-snug">Criação do Catálogo no WhatsApp</span>
-                    </div>
-                    <div class="flex items-start gap-3 bg-white rounded-2xl px-4 py-3 border border-gray-100 shadow-sm md:col-span-2">
-                        <span class="text-[#0fa958] font-black text-lg leading-none mt-0.5">✓</span>
-                        <span class="font-bold text-gray-800 text-[15px] leading-snug">Acesso imediato ao conteúdo + garantia incondicional de 7 dias</span>
-                    </div>
+
+                    <a href="https://ceramica.mycartpanda.com/checkout/211226617:1" target="_blank" class="block w-full bg-gray-100 hover:bg-gray-200 text-gray-500 font-bold text-sm py-4 rounded-xl transition-colors tracking-wide mt-auto uppercase border border-gray-200">
+                        Quero perder os Bônus (R$ 10)
+                    </a>
                 </div>
-            </div>
-            
-            <!-- CAIXA DE PREÇO -->
-            <div class="bg-white rounded-[28px] p-8 md:p-10 shadow-[0_10px_40px_rgba(0,0,0,0.06)] max-w-sm mx-auto mb-8 border border-gray-100">
-                <p class="text-[#64748b] font-medium text-xl mb-1">Por apenas</p>
-                <div class="text-[#d81b60] font-bold text-[64px] leading-none mb-3 tracking-tight font-heading">
-                    R$ 10,00
+
+                <!-- PLANO COMPLETO (R$ 17) - DESTAQUE -->
+                <div class="bg-white rounded-[28px] p-6 sm:p-8 shadow-[0_15px_50px_rgba(219,39,119,0.15)] border-4 border-[#0fa958] flex flex-col relative transform md:-translate-y-2 z-10 h-full">
+                    <!-- Label Destaque -->
+                    <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-[#0fa958] text-white font-black text-[11px] sm:text-xs uppercase tracking-widest py-2 px-6 rounded-full shadow-lg whitespace-nowrap">
+                        🔥 Mais Recomendado e Vendido
+                    </div>
+
+                    <div class="mb-4 mt-2">
+                        <h3 class="text-brand-600 font-black text-2xl uppercase tracking-wider mb-1">Plano Completo</h3>
+                        <p class="text-gray-600 text-[13px] font-bold h-10">Método completo, vídeos, bônus e ferramentas para não errar.</p>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <p class="text-[#64748b] font-medium text-sm mb-1">Pagamento Único</p>
+                        <div class="text-[#0fa958] font-bold text-6xl sm:text-7xl leading-none mb-1 tracking-tight font-heading">
+                            R$ 17
+                        </div>
+                        <p class="text-brand-500 font-bold text-[13px]">
+                            <span class="line-through text-gray-400">De R$ 197</span> (Por menos de 1 pizza)
+                        </p>
+                    </div>
+
+                    <div class="flex-1 space-y-3 sm:space-y-4 text-left mb-8 bg-brand-50/50 p-4 sm:p-5 rounded-2xl border border-brand-100">
+                        <div class="flex items-start gap-3">
+                            <span class="text-[#0fa958] font-black text-lg mt-0.5">✓</span>
+                            <span class="text-gray-900 font-bold text-[14px]">Toda a Apostila Digital (Receitas e Método)</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-[#0fa958] font-black text-lg mt-0.5">✓</span>
+                            <span class="text-brand-700 font-black text-[14px] underline decoration-brand-300 decoration-2">Videoaulas Práticas (Montagem e Corte)</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-[#0fa958] font-black text-lg mt-0.5">✓</span>
+                            <span class="text-gray-900 font-bold text-[14px]">Todos os 3 Bônus Inclusos</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-[#0fa958] font-black text-lg mt-0.5">✓</span>
+                            <span class="text-gray-900 font-bold text-[14px]">Pack Canva para Divulgação</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-[#0fa958] font-black text-lg mt-0.5">✓</span>
+                            <span class="text-gray-900 font-bold text-[14px]">Planilha Automática de Precificação</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-[#0fa958] font-black text-lg mt-0.5">✓</span>
+                            <span class="text-gray-900 font-bold text-[14px]">Suporte VIP com a Professora</span>
+                        </div>
+
+                        <!-- NOVO BÔNUS: 16 CURSOS -->
+                        <div class="mt-4 pt-4 border-t border-brand-200">
+                            <div class="flex items-start gap-2 mb-2">
+                                <span class="animate-pulse text-[#db2777] font-black text-xl">🎁</span>
+                                <span class="text-brand-800 font-black text-[14px] uppercase tracking-wide leading-tight">
+                                    SUPER BÔNUS LIBERADO: <br>
+                                    <span class="text-brand-600 text-[12px]">ACESSO A ESCOLA COM +16 CURSOS</span>
+                                </span>
+                            </div>
+                            <div class="pl-7">
+                                <div class="grid grid-cols-2 gap-x-2 gap-y-1.5 text-[10px] sm:text-[11px] font-bold text-gray-700 bg-white p-2.5 rounded-xl border border-brand-100 shadow-sm">
+                                    <span class="flex items-center gap-1"><span class="text-green-500 text-xs">✓</span>Bolos de Pote</span>
+                                    <span class="flex items-center gap-1"><span class="text-green-500 text-xs">✓</span>Brigadeiros</span>
+                                    <span class="flex items-center gap-1"><span class="text-green-500 text-xs">✓</span>Caseirinhos</span>
+                                    <span class="flex items-center gap-1"><span class="text-green-500 text-xs">✓</span>Geladinhos</span>
+                                    <span class="flex items-center gap-1"><span class="text-green-500 text-xs">✓</span>Copo Felicidade</span>
+                                    <span class="flex items-center gap-1"><span class="text-green-500 text-xs">✓</span>Trufas</span>
+                                    <span class="flex items-center gap-1"><span class="text-green-500 text-xs">✓</span>Brownie</span>
+                                    <span class="flex items-center gap-1"><span class="text-green-500 text-xs">✓</span>Ovos de Páscoa</span>
+                                    <span class="flex items-center gap-1"><span class="text-green-500 text-xs">✓</span>Cookies</span>
+                                    <span class="flex items-center gap-1"><span class="text-green-500 text-xs">✓</span>Cone Trufado</span>
+                                    <span class="flex items-center gap-1"><span class="text-green-500 text-xs">✓</span>Bombons</span>
+                                    <span class="flex items-center gap-1"><span class="text-green-500 text-xs">✓</span>Bolos Festa</span>
+                                    <span class="flex items-center gap-1"><span class="text-green-500 text-xs">✓</span>B. Casamento</span>
+                                    <span class="flex items-center gap-1"><span class="text-green-500 text-xs">✓</span>Salgados</span>
+                                    <span class="flex items-center gap-1"><span class="text-green-500 text-xs">✓</span>Pudim Lucrativo</span>
+                                    <span class="flex items-center gap-1"><span class="text-brand-600 text-xs">✓</span>E mais!</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LINK DO CHECKOUT YAMPI (R$ 17) -->
+                    <a href="https://mari-confeiteira.pay.yampi.com.br/r/GG5MEVSC3X" target="_blank" class="block w-full bg-[#0fa958] hover:bg-[#0c8b48] text-white font-black text-xl py-5 sm:py-6 rounded-2xl shadow-[0_8px_20px_rgba(15,169,88,0.3)] transition-transform transform hover:scale-105 tracking-wide mt-auto animate-pulse uppercase">
+                        SIM! QUERO O COMPLETO
+                    </a>
+                    <p class="text-[11px] text-gray-500 font-semibold flex items-center justify-center gap-1 mt-3">
+                        🔒 Pagamento 100% Seguro
+                    </p>
                 </div>
-                <p class="text-[#94a3b8] font-medium text-[15px]">
-                    <span class="line-through">De R$ 197,00</span> (pagamento único)
-                </p>
-            </div>
-            
-            <!-- BOTÃO CTA CHECKOUT (YAMPI ATUALIZADO) -->
-            <div class="max-w-sm mx-auto">
-                <a href="https://mari-confeiteira.pay.yampi.com.br/r/3MMT72AVJ5" target="_blank" class="block w-full bg-[#0fa958] hover:bg-[#0c8b48] text-white font-bold text-xl py-5 rounded-2xl shadow-[0_8px_20px_rgba(15,169,88,0.25)] transition-transform transform hover:scale-105 tracking-wide mb-3">
-                    COMPRAR AGORA
-                </a>
-                <p class="text-sm text-gray-500 font-semibold flex items-center justify-center gap-1.5">
-                    🔒 Ambiente 100% Seguro e Criptografado
-                </p>
+
             </div>
 
             <!-- Garantia -->
-            <div class="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto">
+            <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto">
+                <!-- Imagem Selo Garantia (Raiz do GitHub) -->
                 <img src="selo-garantia.webp" 
                      onerror="this.onerror=null; this.src='https://placehold.co/100x100/fdf2f8/0fa958?text=Garantia';" 
                      alt="Garantia de 7 dias" 
                      class="w-24 h-auto object-contain flex-shrink-0" 
                      loading="lazy">
-                
+                     
                 <div class="text-center sm:text-left">
                     <h4 class="font-bold text-gray-900 text-lg mb-1">Garantia Incondicional de 7 Dias</h4>
                     <p class="text-gray-600 text-sm leading-relaxed">O risco é todo nosso. Se você não gostar do material ou achar que não é pra você, devolvemos 100% do seu dinheiro. Sem burocracia, basta enviar uma mensagem.</p>
@@ -577,40 +670,16 @@
             <div class="space-y-4">
                 <details class="group bg-gray-50 rounded-2xl border border-gray-100 hover:border-brand-300 transition-colors [&_summary::-webkit-details-marker]:hidden">
                     <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-5 text-gray-900 font-bold text-lg md:text-[17px]">
-                        Preciso de iFood para vender?
+                        Preciso de ingredientes ou equipamentos caros?
                         <span class="shrink-0 transition duration-300 group-open:-rotate-45 text-brand-500">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
                         </span>
                     </summary>
                     <div class="px-5 pb-5 text-gray-600 leading-relaxed text-[15px]">
-                        <strong>Não!</strong> Todo o método é focado em usar seu Instagram para atrair clientes e o WhatsApp para fechar as vendas, sem pagar taxas altas para aplicativos de delivery.
+                        <strong>Não!</strong> O método foi criado para ser prático e escalável. Você pode começar com os utensílios que já tem na cozinha e aplicar a montagem e os cortes de bolo para maximizar o lucro.
                     </div>
                 </details>
                 
-                <details class="group bg-gray-50 rounded-2xl border border-gray-100 hover:border-brand-300 transition-colors [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-5 text-gray-900 font-bold text-lg md:text-[17px]">
-                        Preciso de motoboy próprio ou posso usar app de entrega?
-                        <span class="shrink-0 transition duration-300 group-open:-rotate-45 text-brand-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
-                        </span>
-                    </summary>
-                    <div class="px-5 pb-5 text-gray-600 leading-relaxed text-[15px]">
-                        Ensinamos a técnica de embalagem estruturada para que você possa usar motoboys terceirizados (como Uber Moto, 99 ou da sua região) com total segurança, sem o bolo chegar destruído.
-                    </div>
-                </details>
-
-                <details class="group bg-gray-50 rounded-2xl border border-gray-100 hover:border-brand-300 transition-colors [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-5 text-gray-900 font-bold text-lg md:text-[17px]">
-                        E se eu nunca fiz vendas por encomenda antes?
-                        <span class="shrink-0 transition duration-300 group-open:-rotate-45 text-brand-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
-                        </span>
-                    </summary>
-                    <div class="px-5 pb-5 text-gray-600 leading-relaxed text-[15px]">
-                        O método foi feito exatamente para isso. Você vai aprender a gerar desejo durante a semana, pegar os pagamentos antecipados e só ir para a cozinha com a venda garantida. <strong>Zero risco de sobrar.</strong>
-                    </div>
-                </details>
-
                 <details class="group bg-gray-50 rounded-2xl border border-gray-100 hover:border-brand-300 transition-colors [&_summary::-webkit-details-marker]:hidden">
                     <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-5 text-gray-900 font-bold text-lg md:text-[17px]">
                         Como e quando vou receber o acesso?
@@ -619,7 +688,19 @@
                         </span>
                     </summary>
                     <div class="px-5 pb-5 text-gray-600 leading-relaxed text-[15px]">
-                        <strong>Imediatamente!</strong> Assim que o seu pagamento via PIX ou Cartão for confirmado, você receberá automaticamente um e-mail com o seu link de acesso à plataforma.
+                        <strong>Imediatamente!</strong> Assim que o seu pagamento via PIX ou Cartão for confirmado, você receberá automaticamente um e-mail com o seu link de acesso.
+                    </div>
+                </details>
+
+                <details class="group bg-gray-50 rounded-2xl border border-gray-100 hover:border-brand-300 transition-colors [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-5 text-gray-900 font-bold text-lg md:text-[17px]">
+                        Eu nunca fiz um festival antes, vou conseguir?
+                        <span class="shrink-0 transition duration-300 group-open:-rotate-45 text-brand-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                        </span>
+                    </summary>
+                    <div class="px-5 pb-5 text-gray-600 leading-relaxed text-[15px]">
+                        Com certeza. Nós ensinamos a montar os bolos, cortar perfeitamente e planejar o festival no modelo de "encomendas abertas", ou seja: você vende antes de produzir. <strong>Zero risco.</strong>
                     </div>
                 </details>
             </div>
